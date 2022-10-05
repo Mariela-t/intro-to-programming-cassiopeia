@@ -1,25 +1,26 @@
 let today = new Date();
-
 let thisYear = today.getFullYear();
 
 let footer = document.querySelector("footer");
-
 let copyright = document.createElement("p");
-copyright.innerHTML = `Mariela ${thisYear}`;
+copyright.innerHTML = `© Mariela Tinoco Rojas ${thisYear}`;
 footer.appendChild(copyright);
 
 let skills = ["HTML", "JavaScript", "CSS"];
 
 let skillsSection = document.querySelector("#skills");
 let skillsList = skillsSection.querySelector("ul");
+skillsList.classList.add("skills-list");
 
 for (i = 0; i < skills.length; i++) {
   let skill = document.createElement("li");
   skill.innerText = skills[i];
   skillsList.appendChild(skill);
 }
+
 let messageForm = document.querySelector('[name="leave_message"]');
 let messageCount = 0;
+
 messageForm.addEventListener("submit", (e) => {
   let name = e.target.name.value;
   let email = e.target.email.value;
@@ -35,9 +36,11 @@ messageForm.addEventListener("submit", (e) => {
   let newMessage = document.createElement("li");
   newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: <span>${message}</span> `;
   let removeButton = document.createElement("button");
+  removeButton.classList.add("remove-button");
   removeButton.innerText = "remove";
   removeButton.type = "button";
   let editButton = document.createElement("button");
+  editButton.classList.add("edit-button");
   editButton.innerText = "edit";
   editButton.type = "button";
   removeButton.addEventListener("click", (e) => {
