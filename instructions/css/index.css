@@ -1,0 +1,126 @@
+@media screen and (min-width: 375px) {
+  body {
+    background-color: #02321e;
+    color: #e2d1f9;
+    font-family: monospace;
+  }
+  section {
+    background-color: #e2d1f9;
+    color: #02321e;
+  }
+}
+@media screen and(max-width: 667px) {
+  body {
+    background-color: #02321e;
+    color: #e2d1f9;
+    font-family: monospace;
+  }
+  section {
+    background-color: #e2d1f9;
+    color: #02321e;
+  }
+}
+
+body {
+  font-family: "Source Serif Pro", serif;
+  text-align: center;
+  background-color: #02321e;
+  color: #e2d1f9;
+}
+/* background color a lighter green #317773 */
+section {
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(12, 12, 12);
+  padding: 20px;
+  margin: 20px 220px;
+  background-color: #e2d1f9;
+  color: #0f4830;
+}
+
+h1 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+li {
+  display: block;
+  text-align: center;
+}
+
+ul {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #59bab5;
+}
+
+a:hover {
+  color: #e16cd0;
+}
+
+.skills-list {
+  padding: 1px;
+}
+
+.submitButton button {
+  color: #e2d1f9;
+  background-color: #317773;
+  border-radius: 18px;
+  border: #317773;
+  box-shadow: 0 10px 10px rgb(0 0 0 /10%);
+  padding: 14px 23px;
+  margin: 15px 0;
+}
+
+button:hover {
+  cursor: pointer;
+  color: #317773;
+  background-color: #e2d1f9;
+  border: #317773;
+  border-style: solid;
+}
+
+.message-form {
+  padding: 2px;
+  margin: 5px;
+}
+
+.name {
+  display: block;
+  position: relative;
+  margin-right: 200px;
+}
+
+.email {
+  display: block;
+  position: relative;
+  margin-left: 200px;
+  margin-top: -41.5px;
+}
+
+.message {
+  margin-top: 35px;
+}
+.remove-button {
+  background-color: #317773;
+  color: #e2d1f9;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 20px;
+  border: #317773;
+  box-shadow: 0 10px 10px rgb(0 0 0 /10%);
+}
+.edit-button {
+  background-color: #317773;
+  color: #e2d1f9;
+  padding: 15px 20px;
+  border-radius: 20px;
+  border: #317773;
+  box-shadow: 0 10px 10px rgb(0 0 0 /10%);
+}
