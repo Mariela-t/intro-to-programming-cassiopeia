@@ -21,11 +21,32 @@
     <title>Mariela Tinoco Rojas</title>
   </head>
   <body>
+    <div class="navigation">
+      <nav>
+        <ul class="navbar">
+          <a href="#about" class="navbar" id="navbar_link_about">
+            <li class="navbar" id="navbar_link_about">About</li>
+          </a>
+          <a href="#experience" class="navbar" id="navbar_link_exp">
+            <li class="navbar" id="navbar_link_exp">Experience</li>
+          </a>
+          <a href="#skills" class="navbar" id="navbar_link_skills">
+            <li class="navbar" id="navbar_link_skills">Skills</li>
+          </a>
+          <a href="#connect" class="navbar" id="navbar_link_connect">
+            <li class="navbar" id="navbar_link_connect">Connect</li>
+          </a>
+          <a href="#message" class="navbar" id="navbar_link_message">
+            <li class="navbar" id="navbar_link_message">Message</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
     <section>
       <h1>Mariela Tinoco Rojas</h1>
     </section>
 
-    <section>
+    <section class="about" id="about">
       <h2>About:</h2>
 
       <p>
@@ -34,16 +55,19 @@
       </p>
     </section>
 
-    <section>
+    <section class="experience" id="experience">
       <h2>Experience:</h2>
-      <p>I have created a weather and dictionary app with SheCodes.</p>
+      <div class="flex-container">
+        <div>Weather app</div>
+        <div>Dictionary app</div>
+      </div>
     </section>
     <section id="skills">
       <h2>Skills</h2>
       <ul></ul>
     </section>
 
-    <section>
+    <section class="connect" id="connect">
       <h2>Connect:</h2>
       <ul class="connections">
         <li><a href="https://github.com/Mariela-t">Github</a></li>
@@ -55,7 +79,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="message" id="message">
       <h2>Leave a Message</h2>
 
       <form name="leave_message" class="message-form">
@@ -93,7 +117,9 @@
 
     <section id="messages">
       <h2 id="messages_header"></h2>
-      <ul></ul>
+      <div class="flex-container">
+        <ul></ul>
+      </div>
     </section>
 
     <footer></footer>
