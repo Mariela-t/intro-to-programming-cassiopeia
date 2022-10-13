@@ -31,8 +31,10 @@ messageForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let messageSection = document.querySelector("#messages");
   let messageHeader = document.querySelector("#messages_header");
+  messageHeader.style.visibility = "visible";
   messageHeader.innerHTML = "Messages";
   let messageList = messageSection.querySelector("ul");
+
   let newMessage = document.createElement("li");
   newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: <span>${message}</span> `;
   let removeButton = document.createElement("button");
@@ -48,7 +50,7 @@ messageForm.addEventListener("submit", (e) => {
     let entry = removeButton.parentNode;
     entry.remove();
     if (messageCount == 0) {
-      messageHeader.remove();
+      messageHeader.style.visibility = "hidden";
     }
   });
 

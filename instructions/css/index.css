@@ -1,4 +1,4 @@
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 600px) {
   body {
     background-color: #02321e;
     color: #e2d1f9;
@@ -8,18 +8,45 @@
     background-color: #e2d1f9;
     color: #02321e;
   }
+  .navbar ul {
+    background-color: #e2d1f9;
+    margin: 35px 0 50px 0px;
+    overflow: hidden;
+  }
+  .navbar li {
+    float: left;
+  }
+  .navbar li,
+  a {
+    padding: 10px;
+  }
 }
-@media screen and(max-width: 667px) {
+/* @media screen and(max-width: 500px) {
   body {
     background-color: #02321e;
     color: #e2d1f9;
     font-family: monospace;
-  }
+  } 
   section {
     background-color: #e2d1f9;
     color: #02321e;
   }
+}*/
+
+.navbar li {
+  float: left;
 }
+.navbar li,
+a {
+  display: inline;
+  padding: 10px;
+}
+
+/*.navbar ul,
+li {
+  background-color: #e2d1f9;
+  margin: 15px 0 10px 0px;
+} */
 
 body {
   font-family: "Source Serif Pro", serif;
@@ -32,7 +59,7 @@ section {
   border-radius: 5px;
   box-shadow: 10px 10px 10px rgba(12, 12, 12);
   padding: 20px;
-  margin: 20px 220px;
+  margin: 100px 220px;
   background-color: #e2d1f9;
   color: #0f4830;
 }
@@ -51,9 +78,19 @@ li {
   text-align: center;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#messages ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+/*
 ul {
   text-align: center;
-}
+} */
 
 a {
   text-decoration: none;
@@ -70,9 +107,9 @@ a:hover {
 
 .submitButton button {
   color: #e2d1f9;
-  background-color: #317773;
+  background-color: #0f4830;
   border-radius: 18px;
-  border: #317773;
+  border: #0f4830;
   box-shadow: 0 10px 10px rgb(0 0 0 /10%);
   padding: 14px 23px;
   margin: 15px 0;
@@ -80,9 +117,9 @@ a:hover {
 
 button:hover {
   cursor: pointer;
-  color: #317773;
+  color: #0f4830;
   background-color: #e2d1f9;
-  border: #317773;
+  border: #0f4830;
   border-style: solid;
 }
 
@@ -108,19 +145,19 @@ button:hover {
   margin-top: 35px;
 }
 .remove-button {
-  background-color: #317773;
+  background-color: #0f4830;
   color: #e2d1f9;
   margin: 10px;
   padding: 15px;
   border-radius: 20px;
-  border: #317773;
+  border: #0f4830;
   box-shadow: 0 10px 10px rgb(0 0 0 /10%);
 }
 .edit-button {
-  background-color: #317773;
+  background-color: #0f4830;
   color: #e2d1f9;
   padding: 15px 20px;
   border-radius: 20px;
-  border: #317773;
+  border: #0f4830;
   box-shadow: 0 10px 10px rgb(0 0 0 /10%);
 }
