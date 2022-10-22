@@ -22,16 +22,18 @@ let messageForm = document.querySelector('[name="leave_message"]');
 let messageCount = 0;
 
 messageForm.addEventListener("submit", (e) => {
+  e.preventDefault();
   let name = e.target.name.value;
   let email = e.target.email.value;
   let message = e.target.message.value;
   console.log("name: " + name);
   console.log("email: " + email);
   console.log("message: " + message);
-  e.preventDefault();
+
   let messageSection = document.querySelector("#messages");
   let messageHeader = document.querySelector("#messages_header");
   messageHeader.style.visibility = "visible";
+  messageSection.style.visibility = "hidden";
   messageHeader.innerHTML = "Messages";
   let messageList = messageSection.querySelector("ul");
 
@@ -51,6 +53,7 @@ messageForm.addEventListener("submit", (e) => {
     entry.remove();
     if (messageCount == 0) {
       messageHeader.style.visibility = "hidden";
+      messageSection.style.visibility = "hidden";
     }
   });
 
@@ -58,9 +61,24 @@ messageForm.addEventListener("submit", (e) => {
   newMessage.appendChild(editButton);
   messageList.appendChild(newMessage);
   messageForm.reset();
+  messageSection.style.visibility = "visible";
   messageCount++;
   editButton.addEventListener("click", (e) => {
-    e.target.name.value = name;
-    console.log(name);
+    e.preventDefault();
+    newMessage.remove();
+    messageCount--;
+    if (messageCount == 0) {
+      messageHeader.style.visibility = "hidden";
+      messageSection.style.visibility = "hidden";
+    }
+    // let nameElement = document.querySelector("[name = name]");
+    // nameElement.value = name;
+    // let emailElement = document.querySelector("[name = email]");
+    // emailElement.value = email;
+    // let messageElement = document.querySelector("[name = message]");
+    // messageElement.value = message;
+    messageForm.name.value = name;
+    messageForm.email.value = email;
+    messageForm.message.value = message;
   });
 });

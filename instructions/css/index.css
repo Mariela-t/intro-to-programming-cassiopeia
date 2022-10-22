@@ -1,37 +1,9 @@
-@media screen and (max-width: 600px) {
-  body {
-    background-color: #02321e;
-    color: #e2d1f9;
-    font-family: monospace;
-  }
-  section {
-    background-color: #e2d1f9;
-    color: #02321e;
-  }
-  .navbar ul {
-    background-color: #e2d1f9;
-    margin: 35px 0 50px 0px;
-    overflow: hidden;
-  }
-  .navbar li {
-    float: left;
-  }
-  .navbar li,
-  a {
-    padding: 10px;
-  }
-}
-/* @media screen and(max-width: 500px) {
-  body {
-    background-color: #02321e;
-    color: #e2d1f9;
-    font-family: monospace;
-  } 
-  section {
-    background-color: #e2d1f9;
-    color: #02321e;
-  }
-}*/
+/* .container {
+  background-image: url("./Users/mariela/intro-to-programming-cassiopeia/instructions/image/poppies.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+} */
 
 .navbar li {
   float: left;
@@ -42,26 +14,21 @@ a {
   padding: 10px;
 }
 
-/*.navbar ul,
-li {
-  background-color: #e2d1f9;
-  margin: 15px 0 10px 0px;
-} */
-
 body {
   font-family: "Source Serif Pro", serif;
   text-align: center;
-  background-color: #02321e;
-  color: #e2d1f9;
 }
-/* background color a lighter green #317773 */
+
 section {
   border-radius: 5px;
-  box-shadow: 10px 10px 10px rgba(12, 12, 12);
+  box-shadow: 10px 10px 10px #b0906ead;
   padding: 20px;
   margin: 100px 220px;
-  background-color: #e2d1f9;
-  color: #0f4830;
+  background-color: #97b6ca;
+}
+h1,
+h2 {
+  color: #d68a48;
 }
 
 h1 {
@@ -76,6 +43,7 @@ h2 {
 li {
   display: block;
   text-align: center;
+  list-style-type: none;
 }
 
 .flex-container {
@@ -87,18 +55,14 @@ li {
   display: flex;
   justify-content: space-evenly;
 }
-/*
-ul {
-  text-align: center;
-} */
 
 a {
   text-decoration: none;
-  color: #59bab5;
+  color: #d68a48;
 }
 
 a:hover {
-  color: #e16cd0;
+  color: #6c7ae1;
 }
 
 .skills-list {
@@ -106,10 +70,10 @@ a:hover {
 }
 
 .submitButton button {
-  color: #e2d1f9;
-  background-color: #0f4830;
+  color: #fff;
+  background-color: #c7826b;
   border-radius: 18px;
-  border: #0f4830;
+  border: #d49d8f;
   box-shadow: 0 10px 10px rgb(0 0 0 /10%);
   padding: 14px 23px;
   margin: 15px 0;
@@ -117,9 +81,9 @@ a:hover {
 
 button:hover {
   cursor: pointer;
-  color: #0f4830;
-  background-color: #e2d1f9;
-  border: #0f4830;
+  color: white;
+  background-color: #b0906f;
+  border: #b0906f;
   border-style: solid;
 }
 
@@ -160,4 +124,52 @@ button:hover {
   border-radius: 20px;
   border: #0f4830;
   box-shadow: 0 10px 10px rgb(0 0 0 /10%);
+}
+
+@media (max-width: 851px) {
+  main {
+    flex-direction: column;
+  }
+
+  body {
+    background-color: #0f4830;
+    color: #e2d1f9;
+    font-family: monospace;
+  }
+  section {
+    background-color: #e2d1f9;
+    color: #02321e;
+  }
+  .navbar ul {
+    background-color: #e2d1f9;
+    margin: 35px 0 50px 0px;
+    overflow: hidden;
+  }
+  .navbar li {
+    float: left;
+  }
+  .navbar li,
+  a {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 10px;
+  }
+  .name,
+  .email {
+    position: initial;
+    margin: auto;
+    padding: 10px;
+  }
+  .message {
+    margin-top: 10px;
+  }
+
+  #message ul {
+    display: block;
+  }
 }
