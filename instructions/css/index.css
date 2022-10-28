@@ -1,9 +1,17 @@
-/* .container {
-  background-image: url("./Users/mariela/intro-to-programming-cassiopeia/instructions/image/poppies.jpg");
+body {
+  background-image: url("/instructions/image/poppies.jpg");
   background-size: cover;
-  height: 100vh;
   background-repeat: no-repeat;
-} */
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Source Serif Pro", serif;
+  text-align: center;
+}
+
+.navigation {
+  position: fixed;
+  margin-top: -80px;
+}
 
 .navbar li {
   float: left;
@@ -11,12 +19,8 @@
 .navbar li,
 a {
   display: inline;
-  padding: 10px;
-}
 
-body {
-  font-family: "Source Serif Pro", serif;
-  text-align: center;
+  padding: 10px;
 }
 
 section {

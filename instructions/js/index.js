@@ -71,14 +71,40 @@ messageForm.addEventListener("submit", (e) => {
       messageHeader.style.visibility = "hidden";
       messageSection.style.visibility = "hidden";
     }
-    // let nameElement = document.querySelector("[name = name]");
-    // nameElement.value = name;
-    // let emailElement = document.querySelector("[name = email]");
-    // emailElement.value = email;
-    // let messageElement = document.querySelector("[name = message]");
-    // messageElement.value = message;
+
     messageForm.name.value = name;
     messageForm.email.value = email;
     messageForm.message.value = message;
   });
 });
+
+let githubRequest = new XMLHttpRequest();
+githubRequest.open("GET", "https://api.github.com/users/mariela-t/repos");
+githubRequest.send();
+//githubRequest.addEventListener("load", (e) => {});
+let projectSection = document.querySelector("#projects");
+githubRequest.onreadystatechange = () => {
+  if (
+    githubRequest.readyState === XMLHttpRequest.DONE &&
+    githubRequest.status == 200
+  ) {
+    // document.getElementById("demo").innerHTML = this.responseText;
+    let response = JSON.parse(githubRequest.responseText);
+    for (i = 0; i < response.length; i++) {
+      let name = response[i].name;
+      let project = document.createElement("li");
+      project.innerHTML = `<a href= "https://github.com/Mariela-t/${name}" target="_blank">${name} </a>`;
+      // let details = document.createElement("ul");
+      // let description = document.createElement("li");
+      // description.innerHTML = response[i].description;
+      // details.appendChild(description);
+      // let date = document.createElement("li");
+      // date.innerHTML = response[i].created_at;
+      // details.appendChild(date);
+      // project.appendChild(details);
+      projectSection.appendChild(project);
+    }
+  } else if (githubRequest.readyState === XMLHttpRequest.DONE) {
+    console.log(githubRequest.status);
+  }
+};
