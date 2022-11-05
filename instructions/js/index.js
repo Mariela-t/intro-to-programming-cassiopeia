@@ -14,6 +14,7 @@ skillsList.classList.add("skills-list");
 
 for (i = 0; i < skills.length; i++) {
   let skill = document.createElement("li");
+  skill.classList.add("skill");
   skill.innerText = skills[i];
   skillsList.appendChild(skill);
 }
@@ -26,9 +27,6 @@ messageForm.addEventListener("submit", (e) => {
   let name = e.target.name.value;
   let email = e.target.email.value;
   let message = e.target.message.value;
-  console.log("name: " + name);
-  console.log("email: " + email);
-  console.log("message: " + message);
 
   let messageSection = document.querySelector("#messages");
   let messageHeader = document.querySelector("#messages_header");
@@ -78,33 +76,61 @@ messageForm.addEventListener("submit", (e) => {
   });
 });
 
-let githubRequest = new XMLHttpRequest();
-githubRequest.open("GET", "https://api.github.com/users/mariela-t/repos");
-githubRequest.send();
-//githubRequest.addEventListener("load", (e) => {});
+// let githubRequest = new XMLHttpRequest();
+// githubRequest.open("GET", "https://api.github.com/users/mariela-t/repos");
+// githubRequest.send();
+// //githubRequest.addEventListener("load", (e) => {});
+// let projectSection = document.querySelector("#projects");
+// githubRequest.onreadystatechange = () => {
+//   if (
+//     githubRequest.readyState === XMLHttpRequest.DONE &&
+//     githubRequest.status == 200
+//   ) {
+//     // document.getElementById("demo").innerHTML = this.responseText;
+//     let response = JSON.parse(githubRequest.responseText);
+//     for (i = 0; i < response.length; i++) {
+//       let name = response[i].name;
+//       let project = document.createElement("li");
+//       project.innerHTML = `<a href= "https://github.com/Mariela-t/${name}" target="_blank">${name} </a>`;
+// let details = document.createElement("ul");
+// let description = document.createElement("li");
+// description.innerHTML = response[i].description;
+// details.appendChild(description);
+// let date = document.createElement("li");
+// date.innerHTML = response[i].created_at;
+// details.appendChild(date);
+// project.appendChild(details);
+//       projectSection.appendChild(project);
+//     }
+//   } else if (githubRequest.readyState === XMLHttpRequest.DONE) {
+//     console.log(githubRequest.status);
+//   }
+// };
 let projectSection = document.querySelector("#projects");
-githubRequest.onreadystatechange = () => {
-  if (
-    githubRequest.readyState === XMLHttpRequest.DONE &&
-    githubRequest.status == 200
-  ) {
-    // document.getElementById("demo").innerHTML = this.responseText;
-    let response = JSON.parse(githubRequest.responseText);
-    for (i = 0; i < response.length; i++) {
-      let name = response[i].name;
-      let project = document.createElement("li");
-      project.innerHTML = `<a href= "https://github.com/Mariela-t/${name}" target="_blank">${name} </a>`;
-      // let details = document.createElement("ul");
-      // let description = document.createElement("li");
-      // description.innerHTML = response[i].description;
-      // details.appendChild(description);
-      // let date = document.createElement("li");
-      // date.innerHTML = response[i].created_at;
-      // details.appendChild(date);
-      // project.appendChild(details);
-      projectSection.appendChild(project);
-    }
-  } else if (githubRequest.readyState === XMLHttpRequest.DONE) {
-    console.log(githubRequest.status);
+fetch("https://api.github.com/users/mariela-t/repos")
+  .then((response) => response.json())
+  .then(afterResponse)
+  .catch(handleErrors);
+
+function afterResponse(response) {
+  for (i = 0; i < response.length; i++) {
+    let project = document.createElement("li");
+    project.classList.add("project-list");
+    project.innerHTML = `<a href= "${response[i].html_url}" target="_blank">${response[i].name} </a>`;
+    let details = document.createElement("ul");
+    let description = document.createElement("li");
+    description.innerHTML = response[i].description;
+    details.appendChild(description);
+    let date = document.createElement("li");
+    date.innerHTML = response[i].created_at;
+    details.appendChild(date);
+    project.appendChild(details);
+    projectSection.appendChild(project);
   }
-};
+}
+
+function handleErrors(error) {
+  let item = document.createElement("li");
+  item.innerHTML = "unable to load repositories. Please try again later.";
+  projectSection.appendChild(item);
+}
