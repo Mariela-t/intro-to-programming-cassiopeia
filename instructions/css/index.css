@@ -15,12 +15,17 @@ body {
 
 .navbar li {
   float: left;
+  /* color: #0f4830; */
+  font-size: 18px;
 }
 .navbar li,
 a {
   display: inline;
-
+  color: #0f4830;
   padding: 10px;
+}
+.navbar a:hover {
+  color: #fff;
 }
 
 section {
@@ -32,7 +37,8 @@ section {
 }
 h1,
 h2 {
-  color: #d68a48;
+  color: #0a1a6b;
+  /* color: #d68a48; */
 }
 
 h1 {
@@ -59,8 +65,11 @@ li {
   display: flex;
   justify-content: space-evenly;
 }
+#messages a {
+  text-decoration: none;
+}
 
-a {
+.project-list a {
   text-decoration: none;
   color: #d68a48;
 }
@@ -75,7 +84,7 @@ a:hover {
 
 .submitButton button {
   color: #fff;
-  background-color: #c7826b;
+  background-color: #0a1a6b;
   border-radius: 18px;
   border: #d49d8f;
   box-shadow: 0 10px 10px rgb(0 0 0 /10%);
@@ -86,8 +95,8 @@ a:hover {
 button:hover {
   cursor: pointer;
   color: white;
-  background-color: #b0906f;
-  border: #b0906f;
+  background-color: #cd7d32;
+  border: #cd7d32;
   border-style: solid;
 }
 
@@ -96,7 +105,7 @@ button:hover {
   margin: 5px;
 }
 
-.name {
+/* .name {
   display: block;
   position: relative;
   margin-right: 200px;
@@ -107,14 +116,14 @@ button:hover {
   position: relative;
   margin-left: 200px;
   margin-top: -41.5px;
-}
+} */
 
 .message {
   margin-top: 35px;
 }
 .remove-button {
-  background-color: #0f4830;
-  color: #e2d1f9;
+  background-color: #0a1a6b;
+  color: #fff;
   margin: 10px;
   padding: 15px;
   border-radius: 20px;
@@ -122,8 +131,8 @@ button:hover {
   box-shadow: 0 10px 10px rgb(0 0 0 /10%);
 }
 .edit-button {
-  background-color: #0f4830;
-  color: #e2d1f9;
+  background-color: #0a1a6b;
+  color: #fff;
   padding: 15px 20px;
   border-radius: 20px;
   border: #0f4830;
