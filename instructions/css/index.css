@@ -8,24 +8,32 @@ body {
   text-align: center;
 }
 
-.navigation {
+.navigation ul {
   position: fixed;
-  margin-top: -80px;
+  top: -5px;
+  background-color: #ffc600f2;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .navbar li {
   float: left;
-  /* color: #0f4830; */
   font-size: 18px;
 }
 .navbar li,
 a {
   display: inline;
   color: #0f4830;
-  padding: 10px;
+  padding: 5px;
+  text-decoration: none;
 }
 .navbar a:hover {
   color: #fff;
+}
+
+.my-name {
+  margin-top: 150px;
 }
 
 section {
@@ -38,7 +46,6 @@ section {
 h1,
 h2 {
   color: #0a1a6b;
-  /* color: #d68a48; */
 }
 
 h1 {
@@ -48,6 +55,11 @@ h1 {
 
 h2 {
   font-size: 20px;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 li {
@@ -71,11 +83,11 @@ li {
 
 .project-list a {
   text-decoration: none;
-  color: #d68a48;
+  color: #c25e06;
 }
 
 a:hover {
-  color: #6c7ae1;
+  color: #3347df;
 }
 
 .skills-list {
@@ -95,8 +107,8 @@ a:hover {
 button:hover {
   cursor: pointer;
   color: white;
-  background-color: #cd7d32;
-  border: #cd7d32;
+  background-color: #d17219;
+  border: #d17219;
   border-style: solid;
 }
 
@@ -105,21 +117,12 @@ button:hover {
   margin: 5px;
 }
 
-/* .name {
-  display: block;
-  position: relative;
-  margin-right: 200px;
+.name {
+  margin-bottom: 20px;
 }
 
-.email {
-  display: block;
-  position: relative;
-  margin-left: 200px;
-  margin-top: -41.5px;
-} */
-
 .message {
-  margin-top: 35px;
+  margin-top: 20px;
 }
 .remove-button {
   background-color: #0a1a6b;
@@ -139,38 +142,67 @@ button:hover {
   box-shadow: 0 10px 10px rgb(0 0 0 /10%);
 }
 
+.connect a {
+  text-decoration: none;
+}
+
+.connect img {
+  border-radius: 7px;
+  width: 50px;
+}
+
+footer {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
 @media (max-width: 851px) {
   main {
     flex-direction: column;
   }
 
   body {
-    background-color: #0f4830;
-    color: #e2d1f9;
     font-family: monospace;
+    text-align: center;
+  }
+  video {
+    width: 300px;
   }
   section {
-    background-color: #e2d1f9;
+    background-color: #97b6ca;
     color: #02321e;
+    padding: 20px;
+    margin: 60px 20px 40px 20px;
+  }
+  .navigation {
+    margin: -54px 0px 0px -30px;
   }
   .navbar ul {
     background-color: #e2d1f9;
-    margin: 35px 0 50px 0px;
+    margin: 30px 0 50px 0px;
     overflow: hidden;
   }
   .navbar li {
     float: left;
+    font-size: 14px;
   }
   .navbar li,
   a {
     padding: 5px;
   }
-
+  .my-name {
+    margin-top: 200px;
+  }
   h1 {
     font-size: 20px;
   }
   h2 {
-    font-size: 10px;
+    font-size: 15px;
+  }
+
+  .skills-list {
+    display: block;
   }
   .name,
   .email {
@@ -182,7 +214,28 @@ button:hover {
     margin-top: 10px;
   }
 
-  #message ul {
+  #messages ul {
     display: block;
+    font-size: 14px;
+  }
+
+  .remove-button {
+    font-size: 12px;
+    background-color: #0a1a6b;
+    color: #fff;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: #0a1a6b;
+    box-shadow: 0 10px 10px rgb(0 0 0 /10%);
+  }
+  .edit-button {
+    font-size: 12px;
+    background-color: #0a1a6b;
+    color: #fff;
+    padding: 10px 13px;
+    border-radius: 20px;
+    border: #0a1a6b;
+    box-shadow: 0 10px 10px rgb(0 0 0 /10%);
   }
 }
