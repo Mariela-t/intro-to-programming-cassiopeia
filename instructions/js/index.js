@@ -6,7 +6,17 @@ let copyright = document.createElement("p");
 copyright.innerHTML = `© Mariela Tinoco Rojas ${thisYear}`;
 footer.appendChild(copyright);
 
-let skills = ["HTML", "JavaScript", "CSS"];
+let skills = [
+  "HTML",
+  "JavaScript",
+  "CSS",
+  "Debugging",
+  "AJAX",
+  "Git",
+  "Github",
+  "Fetch API",
+  "VS Code",
+];
 
 let skillsSection = document.querySelector("#skills");
 let skillsList = skillsSection.querySelector("ul");
@@ -36,6 +46,7 @@ messageForm.addEventListener("submit", (e) => {
   let messageList = messageSection.querySelector("ul");
 
   let newMessage = document.createElement("li");
+  newMessage.classList.add("new-message");
   newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: <span>${message}</span> `;
   let removeButton = document.createElement("button");
   removeButton.classList.add("remove-button");
@@ -76,36 +87,6 @@ messageForm.addEventListener("submit", (e) => {
   });
 });
 
-// let githubRequest = new XMLHttpRequest();
-// githubRequest.open("GET", "https://api.github.com/users/mariela-t/repos");
-// githubRequest.send();
-// //githubRequest.addEventListener("load", (e) => {});
-// let projectSection = document.querySelector("#projects");
-// githubRequest.onreadystatechange = () => {
-//   if (
-//     githubRequest.readyState === XMLHttpRequest.DONE &&
-//     githubRequest.status == 200
-//   ) {
-//     // document.getElementById("demo").innerHTML = this.responseText;
-//     let response = JSON.parse(githubRequest.responseText);
-//     for (i = 0; i < response.length; i++) {
-//       let name = response[i].name;
-//       let project = document.createElement("li");
-//       project.innerHTML = `<a href= "https://github.com/Mariela-t/${name}" target="_blank">${name} </a>`;
-// let details = document.createElement("ul");
-// let description = document.createElement("li");
-// description.innerHTML = response[i].description;
-// details.appendChild(description);
-// let date = document.createElement("li");
-// date.innerHTML = response[i].created_at;
-// details.appendChild(date);
-// project.appendChild(details);
-//       projectSection.appendChild(project);
-//     }
-//   } else if (githubRequest.readyState === XMLHttpRequest.DONE) {
-//     console.log(githubRequest.status);
-//   }
-// };
 let projectSection = document.querySelector("#projects");
 fetch("https://api.github.com/users/mariela-t/repos")
   .then((response) => response.json())
